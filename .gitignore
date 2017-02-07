@@ -19,6 +19,7 @@ hs_err_pid*
 
 *.pydevproject
 .project
+.classpath
 .metadata
 bin/
 tmp/
