@@ -8,32 +8,32 @@ import java.util.Scanner;
 
 import engine.*;
 
-public class Story {
-	private FileReader storyFile;
-	private BufferedReader readStoryFile;
-	private FileReader choicesFile;
-	private BufferedReader readChoicesFile;
-	private FileReader responsesFile;
-	private BufferedReader readResponsesFile;
+public class Story {	
+	public Story() {
+		String gamePath = System.getProperty("user.dir");
+		String storyFileName = gamePath + "\\data\\gameEvents.txt";
+		String choicesFileName = gamePath + "\\data\\gameChoices.txt";
+		String responsesFileName = gamePath + "\\data\\gameResponses.txt";
+		setup(storyFileName, choicesFileName, responsesFileName);
+		setStoryTrack(0);
+		this.onChoices = false;
+		this.onBattle = false;
+		this.storyLine = "0";
+	}
 	
-	private String storyLine;
-	private Event storyEvent;
-	private Collection<Choice> choices;
-	private ArrayList<Event> responses;
-	private int storyTrack;
-	private boolean onChoices;
-	
-	private void setup(String storyFileName, String choicesFileName, String responsesFileName) {
-		try {
-			this.storyFile = new FileReader(storyFileName);
-			this.readStoryFile = new BufferedReader(this.storyFile);
-			this.choicesFile = new FileReader(choicesFileName);
-			this.readChoicesFile = new BufferedReader(this.choicesFile);
-			this.responsesFile = new FileReader(responsesFileName);
-			this.readResponsesFile = new BufferedReader(this.responsesFile);
-		} catch(IOException e) {
-			System.err.println("Erro na leitura dos arquivos: " + e.getMessage());
+	public Event getNextStoryEvent() {
+		String currentStoryLine = this.getNextStoryLine();
+		if(this.onChoices) {
+			this.currentStoryEvent = new BlankEvent(currentStoryLine, this.choices);
+			return this.currentStoryEvent;
+		} else {
+			this.currentStoryEvent = new BlankEvent(currentStoryLine, new ArrayList<Choice>());
+			return this.currentStoryEvent;
 		}
+	}
+	
+	public boolean isOnBattle() {
+		return this.onBattle;
 	}
 	
 	public void setStoryTrack(int storyTrack) {
@@ -48,42 +48,19 @@ public class Story {
 		this.storyTrack++;
 	}
 	
-	private void updateChoices() {
-		this.choices = new ArrayList<Choice>();
+	private void setup(String storyFileName, String choicesFileName, String responsesFileName) {
 		try {
-			String choiceLine = this.readChoicesFile.readLine();
-			if(choiceLine.equals(Integer.toString(this.getCurrentStoryTrack())))
-				choiceLine = this.readChoicesFile.readLine();
-			while(!choiceLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
-				if(!choiceLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
-					Choice choiceEvent = new BlankChoice(choiceLine, this.responses.get(this.choices.size()));
-					this.choices.add(choiceEvent);
-				}
-				choiceLine = this.readChoicesFile.readLine();
-			}
+			this.storyFile = new FileReader(storyFileName);
+			this.readStoryFile = new BufferedReader(this.storyFile);
+			this.choicesFile = new FileReader(choicesFileName);
+			this.readChoicesFile = new BufferedReader(this.choicesFile);
+			this.responsesFile = new FileReader(responsesFileName);
+			this.readResponsesFile = new BufferedReader(this.responsesFile);
 		} catch(IOException e) {
-			e.printStackTrace();
+			System.err.println("Erro na leitura dos arquivos: " + e.getMessage());
 		}
 	}
-	
-	private void updateResponses() {
-		this.responses = new ArrayList<Event>();
-		try {
-			String responseLine = this.readResponsesFile.readLine();
-			if(responseLine.equals(Integer.toString(this.getCurrentStoryTrack())))
-				responseLine = this.readResponsesFile.readLine();
-			while(!responseLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
-				if(!responseLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
-					Event responseEvent = new BlankEvent(responseLine, new ArrayList<Choice>());
-					this.responses.add(responseEvent);
-				}
-				responseLine = this.readResponsesFile.readLine();
-			}
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
+		
 	private String getNextStoryLine() {
 		try {
 			this.nextStoryTrack();
@@ -111,32 +88,56 @@ public class Story {
 		return this.storyLine;
 	}
 	
-	public Event getNextStoryEvent() {
-		String currentStoryLine = this.getNextStoryLine();
-		if(this.onChoices) {
-			Event currentEvent = new BlankEvent(currentStoryLine, this.choices);
-			return currentEvent;
-		} else {
-			Event currentEvent = new BlankEvent(currentStoryLine, new ArrayList<Choice>());
-			return currentEvent;
+	private void updateResponses() {
+		this.responses = new ArrayList<Event>();
+		try {
+			String responseLine = this.readResponsesFile.readLine();
+			if(responseLine.equals(Integer.toString(this.getCurrentStoryTrack())))
+				responseLine = this.readResponsesFile.readLine();
+			while(!responseLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+				if(!responseLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+					Event responseEvent = new BlankEvent(responseLine, new ArrayList<Choice>());
+					this.responses.add(responseEvent);
+				}
+				responseLine = this.readResponsesFile.readLine();
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
-	public Event updateGamEvent(int choice) {
-		return this.responses.get(choice);
+	private void updateChoices() {
+		this.choices = new ArrayList<Choice>();
+		try {
+			String choiceLine = this.readChoicesFile.readLine();
+			if(choiceLine.equals(Integer.toString(this.getCurrentStoryTrack())))
+				choiceLine = this.readChoicesFile.readLine();
+			while(!choiceLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+				if(!choiceLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+					Choice choiceEvent = new BlankChoice(choiceLine, this.responses.get(this.choices.size()));
+					this.choices.add(choiceEvent);
+				}
+				choiceLine = this.readChoicesFile.readLine();
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
-		
-	public Story() {
-		String gamePath = System.getProperty("user.dir");
-		String storyFileName = gamePath + "\\data\\gameEvents.txt";
-		String choicesFileName = gamePath + "\\data\\gameChoices.txt";
-		String responsesFileName = gamePath + "\\data\\gameResponses.txt";
-		setup(storyFileName, choicesFileName, responsesFileName);
-		setStoryTrack(0);
-		this.onChoices = false;
-		this.storyLine = "0";
-	}
+			
+	private FileReader storyFile;
+	private BufferedReader readStoryFile;
+	private FileReader choicesFile;
+	private BufferedReader readChoicesFile;
+	private FileReader responsesFile;
+	private BufferedReader readResponsesFile;
 	
+	private String storyLine;
+	private Event currentStoryEvent;
+	private Collection<Choice> choices;
+	private ArrayList<Event> responses;
+	private int storyTrack;
+	private boolean onChoices;
+	private boolean onBattle;
 	
 	public static final void main(String[] args) {
 		Story story = new Story();
@@ -159,5 +160,7 @@ public class Story {
 		livro.nextEvent(i);
 		System.out.println(livro.showHistoryBook());
 		System.out.println(livro.showHistory());
+		
+		in.close();
 	}
 }
