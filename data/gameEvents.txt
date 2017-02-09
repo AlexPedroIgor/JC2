@@ -1,0 +1,7 @@
+1
+Era uma vez uma aranha-morcego
+2
+Apareceu um carro
+[choice]
+4
+Fim de Jogo!

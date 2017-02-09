@@ -1,0 +1,5 @@
+2
+Você sai da frente do carro
+Você tenta pular o carro
+Você não faz nada
+2
