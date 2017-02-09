@@ -36,7 +36,7 @@ public class Engine {
     public static Book createBook() {
         Event eventoFinal = new BlankEvent("Você morreu porque o Duarte não mandou ir para a trilha.", new ArrayList<Choice>());
 
-        Collection escolhasIniciais = new ArrayList<Choice>();
+        Collection<Choice> escolhasIniciais = new ArrayList<Choice>();
         Choice escolhaFinalTrilha = new BlankChoice("Segue a trilha", eventoFinal);
         Choice escolhaFinalFloresta = new BlankChoice("Fica na floresta", eventoFinal);
         escolhasIniciais.add(escolhaFinalTrilha);
