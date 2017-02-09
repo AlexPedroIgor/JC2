@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Scanner;
 
 import engine.*;
 
@@ -51,12 +52,14 @@ public class Story {
 		this.choices = new ArrayList<Choice>();
 		try {
 			String choiceLine = this.readChoicesFile.readLine();
-			while(Integer.parseInt(choiceLine) != this.getCurrentStoryTrack()) {
+			if(choiceLine.equals(Integer.toString(this.getCurrentStoryTrack())))
 				choiceLine = this.readChoicesFile.readLine();
-				if(Integer.parseInt(choiceLine) != this.getCurrentStoryTrack()) {
-					Choice choiceEvent = new BlankChoice(choiceLine, this.responses.get(this.choices.size()-1));
+			while(!choiceLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+				if(!choiceLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+					Choice choiceEvent = new BlankChoice(choiceLine, this.responses.get(this.choices.size()));
 					this.choices.add(choiceEvent);
 				}
+				choiceLine = this.readChoicesFile.readLine();
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -67,12 +70,14 @@ public class Story {
 		this.responses = new ArrayList<Event>();
 		try {
 			String responseLine = this.readResponsesFile.readLine();
-			while(Integer.parseInt(responseLine) != this.getCurrentStoryTrack()) {
+			if(responseLine.equals(Integer.toString(this.getCurrentStoryTrack())))
 				responseLine = this.readResponsesFile.readLine();
-				if(Integer.parseInt(responseLine) != this.getCurrentStoryTrack()) {
+			while(!responseLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
+				if(!responseLine.equals(Integer.toString(this.getCurrentStoryTrack()))) {
 					Event responseEvent = new BlankEvent(responseLine, new ArrayList<Choice>());
 					this.responses.add(responseEvent);
 				}
+				responseLine = this.readResponsesFile.readLine();
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -116,6 +121,10 @@ public class Story {
 			return currentEvent;
 		}
 	}
+	
+	public Event updateGamEvent(int choice) {
+		return this.responses.get(choice);
+	}
 		
 	public Story() {
 		String gamePath = System.getProperty("user.dir");
@@ -130,14 +139,24 @@ public class Story {
 	
 	
 	public static final void main(String[] args) {
-		String path = System.getProperty("user.dir");
-
 		Story story = new Story();
 	    
 		Event eventoInicial = story.getNextStoryEvent();
 		
 		Book livro = new Book("A História da Aranha-Morcego", eventoInicial, new Player(10, 10));
 		
+		System.out.println(livro.showHistoryBook());
+		System.out.println(livro.showHistory());
+		for(Choice choice:livro.nextEvents()) {
+            System.out.println(choice.getDescription());
+        }
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Escolha:  ");
+		int i;
+		i = in.nextInt();
+		livro.selectChoice(i);
+		livro.nextEvent(i);
 		System.out.println(livro.showHistoryBook());
 		System.out.println(livro.showHistory());
 	}
