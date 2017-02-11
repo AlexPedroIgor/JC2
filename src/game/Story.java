@@ -1,6 +1,7 @@
 package game;
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -51,12 +52,15 @@ public class Story {
 	
 	private void setup(String storyFileName, String choicesFileName, String responsesFileName) {
 		try {
-			this.storyFile = new FileReader(storyFileName);
-			this.readStoryFile = new BufferedReader(this.storyFile);
-			this.choicesFile = new FileReader(choicesFileName);
-			this.readChoicesFile = new BufferedReader(this.choicesFile);
-			this.responsesFile = new FileReader(responsesFileName);
-			this.readResponsesFile = new BufferedReader(this.responsesFile);
+			this.readStoryFile = new BufferedReader(
+					new InputStreamReader(new FileInputStream(storyFileName), "UTF-8"));
+			
+			this.readChoicesFile = new BufferedReader(
+					new InputStreamReader(new FileInputStream(choicesFileName), "UTF-8"));
+			
+			this.readResponsesFile = new BufferedReader(
+					new InputStreamReader(new FileInputStream(responsesFileName), "UTF-8"));
+			
 		} catch(IOException e) {
 			System.err.println("Erro na leitura dos arquivos: " + e.getMessage());
 		}
@@ -125,11 +129,8 @@ public class Story {
 		}
 	}
 			
-	private FileReader storyFile;
 	private BufferedReader readStoryFile;
-	private FileReader choicesFile;
 	private BufferedReader readChoicesFile;
-	private FileReader responsesFile;
 	private BufferedReader readResponsesFile;
 	
 	private String storyLine;
