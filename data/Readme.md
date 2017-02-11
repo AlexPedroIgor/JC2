@@ -36,7 +36,7 @@ Você morreu
 ## Outras ações de eventos
 
 ### Eventos de multiplas linhas
-```[multi]```: indica que o evento possui multiplas possibilidades
+Escreva ```[multi]``` na primeira linha de uma cena para indicar que o evento possui multiplas possibilidades
 Exemplo:
 ```
 3
@@ -47,6 +47,6 @@ Você e seu amigo estão sozinhos na floresta, quando você nota que seu amigo d
 3
 ```
 ### Eventos com descrições longas e quebra de paragrafos
-```[p]```: Indica uma quebra de paragrafo dentro da linha de texto
+Escreva ```[p]``` no final de um parágrafo para indicar uma quebra de paragrafo dentro da linha de texto.
 
 
