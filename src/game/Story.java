@@ -11,11 +11,12 @@ import engine.*;
 public class Story {	
 	public Story() {
 		String gamePath = System.getProperty("user.dir");
-		String storyFileName = gamePath + "\\data\\gameEvents.txt";
-		String choicesFileName = gamePath + "\\data\\gameChoices.txt";
-		String responsesFileName = gamePath + "\\data\\gameResponses.txt";
+		String dataPath = gamePath + System.getProperty("file.separator") + "data";
+		String storyFileName = dataPath + System.getProperty("file.separator") + "gameEvents.txt";
+		String choicesFileName = dataPath + System.getProperty("file.separator") + "gameChoices.txt";
+		String responsesFileName = dataPath + System.getProperty("file.separator") + "gameResponses.txt";
 		setup(storyFileName, choicesFileName, responsesFileName);
-		setStoryTrack(0);
+		setStoryTrack(1);
 		this.onChoices = false;
 		this.onBattle = false;
 		this.storyLine = "0";
@@ -141,6 +142,8 @@ public class Story {
 	
 	public static final void main(String[] args) {
 		Story story = new Story();
+		
+		System.out.println(System.getProperty("os.name"));
 	    
 		Event eventoInicial = story.getNextStoryEvent();
 		
