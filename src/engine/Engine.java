@@ -31,6 +31,8 @@ public class Engine {
         } while(!book.isTheEnd());
 
         System.out.println(book.showHistory());
+        
+        in.close();
     }
 
     public static Book createBook() {
