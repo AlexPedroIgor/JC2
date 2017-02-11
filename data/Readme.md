@@ -20,6 +20,7 @@ Você sai da frente do carro
 Você tenta pular o carro
 Você não faz nada
 2
+```
 
 ### Respostas
 Para indicar as respostas do jogo para cada escolha, deve-se utilizar a mesma sintáxe do ```gameEvents.txt``` também mantendo a mesma numeração do evento que chamou a escolha.
@@ -30,6 +31,7 @@ Você escapou por pouco
 Você morreu
 Você morreu
 2
+```
 
 ## Outras ações de eventos
 
