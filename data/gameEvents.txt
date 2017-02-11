@@ -1,7 +1,10 @@
 1
 Era uma vez uma aranha-morcego
+1
 2
 Apareceu um carro
 [choice]
-4
+2
+3
 Fim de Jogo!
+3
