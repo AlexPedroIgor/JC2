@@ -1,9 +1,5 @@
 2
-
-Você sai da frente do carro
-
-Você tenta pular o carro
-
-Você não faz nada
-
+VocÃª sai da frente do carro
+VocÃª tenta pular o carro
+VocÃª nÃ£o faz nada
 2

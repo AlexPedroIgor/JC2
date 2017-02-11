@@ -1,9 +1,5 @@
 2
-
-Você escapou por pouco
-
-Você morreu
-
-Você morreu
-
+VocÃª escapou por pouco
+VocÃª morreu
+VocÃª morreu
 2
