@@ -44,18 +44,22 @@ public class SwingControlDemo {
       JButton okButton = new JButton("OK");
       JButton submitButton = new JButton("Submit");
       JButton cancelButton = new JButton("Cancel");
+      JButton otherButton = new JButton("Other");
 
       okButton.setActionCommand("OK");
       submitButton.setActionCommand("Submit");
       cancelButton.setActionCommand("Cancel");
+      otherButton.setActionCommand("Other");
 
       okButton.addActionListener(new ButtonClickListener()); 
       submitButton.addActionListener(new ButtonClickListener()); 
-      cancelButton.addActionListener(new ButtonClickListener()); 
+      cancelButton.addActionListener(new ButtonClickListener());
+      otherButton.addActionListener(new ButtonClickListener());
 
       controlPanel.add(okButton);
       controlPanel.add(submitButton);
-      controlPanel.add(cancelButton);       
+      controlPanel.add(cancelButton);  
+      controlPanel.add(otherButton);
 
       mainFrame.setVisible(true);  
    }
@@ -68,9 +72,11 @@ public class SwingControlDemo {
             statusLabel.setText("Ok Button clicked.");
          } else if( command.equals( "Submit" ) ) {
             statusLabel.setText("Submit Button clicked."); 
-         } else {
+         } else if( command.equals( "Cancel" ) ) {
             statusLabel.setText("Cancel Button clicked.");
-         }  	
+         } else {
+        	 statusLabel.setText("Other Button clicked.");
+         }
       }		
    }
    
