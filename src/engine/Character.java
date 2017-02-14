@@ -1,8 +1,9 @@
 package engine;
 /**
  * Created by filipebraida on 31/05/16.
+ * Edited by Alex, Pedro & Igor on Jan/2017
  */
-public class Character {
+public abstract class Character {
 
     public Character(int life, int attack) {
         this.life = life;
