@@ -49,4 +49,9 @@ Você e seu amigo estão sozinhos na floresta, quando você nota que seu amigo d
 ### Eventos com descrições longas e quebra de paragrafos
 Escreva ```[p]``` no final de um parágrafo para indicar uma quebra de paragrafo dentro da linha de texto.
 
+### Identificar o nome do jogador no texto
+Escreva ```[player]``` no texto para indicar que alí será escrito o nome do jogador
+
+### Identificar o companion do jogador no texto
+Escreva ```[companion]``` no texto para indicar que alí será escrito o nome do companion do jogador
 
