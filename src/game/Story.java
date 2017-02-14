@@ -8,7 +8,9 @@ import java.util.Collection;
 import java.util.Scanner;
 
 import engine.*;
-
+/**
+ * Created by Alex, Pedro & Igor on Jan/2017.
+ */
 public class Story {	
 	public Story() {
 		String gamePath = System.getProperty("user.dir");
