@@ -36,5 +36,6 @@ public class Engine {
 		story.reset();
 		
 		in.close();
+		story.close();
     }
 }
