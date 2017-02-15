@@ -1,3 +1,5 @@
 ﻿ID;name;price;weight;equipment_id
 0;Vela;15;1;-1
 1;Carta;20;1;-1
+2;Arco;50;5;0
+3;Escudo;30;10;1
