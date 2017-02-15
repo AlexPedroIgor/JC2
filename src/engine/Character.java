@@ -36,7 +36,15 @@ public abstract class Character {
         return this.attack;
     }
     
-    public Attributes attributes;
+    public Attributes getAttributes() {
+    	return this.attributes;
+    }
+    
+    public void setAttributes(Attributes attributes) {
+    	this.attributes = attributes;
+    }
+    
+    protected Attributes attributes;
 
     private int life;
     private int attack;
