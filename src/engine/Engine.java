@@ -33,6 +33,8 @@ public class Engine {
 		System.out.println(livro.showHistoryBook());
 		System.out.println(livro.showHistory());
 		
+		story.reset();
+		
 		in.close();
     }
 }
