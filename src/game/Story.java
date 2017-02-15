@@ -89,11 +89,11 @@ public class Story {
 		this.storyLine = this.readStoryFile.readLine();
 		String currentStoryLine = this.storyLine;
 		this.storyLine = this.readStoryFile.readLine();
-		if(this.storyLine.equals("[choice]")) {
+		if(this.storyLine.contains("[choice]")) {
 			this.updateResponses();
 			this.updateChoices();
 			this.onChoices = true;
-		} else if (this.storyLine.equals("[battle]")) {
+		} else if (this.storyLine.contains("[battle]")) {
 			this.onBattle = true;
 		} else {
 			this.onChoices = false;
