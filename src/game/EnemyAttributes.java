@@ -12,6 +12,10 @@ public class EnemyAttributes extends Attributes {
 		super();
 	}
 	
+	public EnemyAttributes(int id) throws IOException {
+		setAttributes(id);
+	}
+	
 	public void setAttributes(int id) throws IOException {
 		String gamePath = System.getProperty("user.dir");
 		String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "character";

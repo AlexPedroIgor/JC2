@@ -13,6 +13,10 @@ public class PlayerAttributes extends Attributes {
 		super();
 	}
 	
+	public PlayerAttributes(int id) throws IOException {
+		setAttributes(id);
+	}
+	
 	public int getSocial() {
 		return social;
 	}
