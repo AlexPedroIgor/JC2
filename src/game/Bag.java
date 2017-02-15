@@ -3,7 +3,7 @@ package game;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import error.FullBagException;
+import error.exception.FullBagException;
 
 /**
  * Created by Alex, Pedro & Igor on Feb/2017.

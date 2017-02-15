@@ -1,4 +1,4 @@
-package error;
+package error.exception;
 
 public class FullBagException extends Exception {
 	public FullBagException() {
