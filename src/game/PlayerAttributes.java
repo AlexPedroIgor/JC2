@@ -1,4 +1,6 @@
 package game;
+import java.io.IOException;
+
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.
  */
@@ -24,6 +26,10 @@ public class PlayerAttributes extends Attributes {
 	}
 	public void setLuck(int luck) {
 		this.luck = luck;
+	}
+	
+	public void setAttributes(int id) throws IOException {
+		id++;
 	}
 	
 	private int social;
