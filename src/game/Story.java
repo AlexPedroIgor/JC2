@@ -40,10 +40,14 @@ public class Story {
 	}
 	
 	public void reset() throws IOException {
+		this.close();
+		this.setup();
+	}
+	
+	public void close() throws IOException {
 		this.readStoryFile.close();
 		this.readChoicesFile.close();
 		this.readResponsesFile.close();
-		this.setup();
 	}
 	
 	public boolean isOnBattle() {
