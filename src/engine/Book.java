@@ -59,6 +59,10 @@ public class Book {
     public Collection<Choice> nextEvents() {
         return this.eventActually.nextEvents();
     }
+    
+    public Player getPlayer() {
+    	return this.player;
+    }
 
     private Event eventActually;
     private Event eventInitial;
