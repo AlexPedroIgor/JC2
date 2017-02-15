@@ -64,7 +64,7 @@ public class Story {
 	
 	private void setup() throws IOException {
 		String gamePath = System.getProperty("user.dir");
-		String dataPath = gamePath + System.getProperty("file.separator") + "data";
+		String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "story";
 		String storyFileName = dataPath + System.getProperty("file.separator") + "gameEvents.txt";
 		String choicesFileName = dataPath + System.getProperty("file.separator") + "gameChoices.txt";
 		String responsesFileName = dataPath + System.getProperty("file.separator") + "gameResponses.txt";
