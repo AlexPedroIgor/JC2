@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * Created by Alex, Pedro & Igor on Feb/2017.
+ */
 public class Equipment extends Item {
 	public Equipment(int id) throws IOException {
 		super(id);
