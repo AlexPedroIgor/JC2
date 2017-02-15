@@ -1,4 +1,6 @@
 package game;
+// JAVA LIBRARIES
+import java.io.IOException;
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.
  */
@@ -40,7 +42,7 @@ public abstract class Attributes {
 		this.perception = perception;
 	}
 	
-	public abstract void setAttributes(int id);
+	public abstract void setAttributes(int id) throws IOException;
 	
 	private int strength;
 	private int intelligence;
