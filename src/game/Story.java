@@ -22,6 +22,9 @@ public class Story {
 	
 	public Event getStoryEvent(int track) throws IOException {
 		String currentStoryLine = this.getStoryLine(track);
+		if(this.getCurrentStoryTrack() >= track) {
+			this.reset();
+		}
 		if(this.onChoices) {
 			this.currentStoryEvent = new BlankEvent(currentStoryLine, this.choices);
 			return this.currentStoryEvent;
