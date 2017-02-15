@@ -1,10 +1,9 @@
 package game;
+// JAVA LIBRARY
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-// JAVA LIBRARIES
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.
  */

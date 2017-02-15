@@ -1,5 +1,5 @@
 package game;
-// JAVA LIBRARIES
+// JAVA LIBRARY
 import java.io.IOException;
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.

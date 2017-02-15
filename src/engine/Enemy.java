@@ -1,10 +1,9 @@
 package engine;
+//JAVA LIBRARY
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-// JAVA LIBRARY
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 // INTERNAL LIBRARY
 import game.EnemyAttributes;
 /**

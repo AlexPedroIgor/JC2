@@ -1,5 +1,5 @@
 package game;
-// JAVA LIBRARIES
+// JAVA LIBRARY
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
