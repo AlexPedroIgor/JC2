@@ -40,6 +40,8 @@ public abstract class Attributes {
 		this.perception = perception;
 	}
 	
+	public abstract void setAttributes(int id);
+	
 	private int strength;
 	private int intelligence;
 	private int agility;
