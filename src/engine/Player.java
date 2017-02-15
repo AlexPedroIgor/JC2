@@ -1,4 +1,6 @@
 package engine;
+// JAVA LIBRARY
+import java.io.IOException;
 // INTERNAL LIBRARY
 import game.PlayerAttributes;
 /**
@@ -9,5 +11,9 @@ public class Player extends Character {
     public Player(int life, int attack) {
         super(life, attack);
         attributes = new PlayerAttributes();
+    }
+    
+    public Player(int id) throws IOException {
+    	attributes = new PlayerAttributes(id);
     }
 }

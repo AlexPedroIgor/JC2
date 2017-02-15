@@ -17,25 +17,6 @@ public class PlayerAttributes extends Attributes {
 		setAttributes(id);
 	}
 	
-	public int getSocial() {
-		return social;
-	}
-	public void setSocial(int social) {
-		this.social = social;
-	}
-	public int getSanity() {
-		return sanity;
-	}
-	public void setSanity(int sanity) {
-		this.sanity = sanity;
-	}
-	public int getLuck() {
-		return luck;
-	}
-	public void setLuck(int luck) {
-		this.luck = luck;
-	}
-	
 	public void setAttributes(int id) throws IOException {
 		String gamePath = System.getProperty("user.dir");
 		String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "character";
@@ -71,6 +52,25 @@ public class PlayerAttributes extends Attributes {
 		setStamina(stamina);
 		setSpirit(spirit);
 		setSocial(social);
+	}
+	
+	public int getSocial() {
+		return social;
+	}
+	public void setSocial(int social) {
+		this.social = social;
+	}
+	public int getSanity() {
+		return sanity;
+	}
+	public void setSanity(int sanity) {
+		this.sanity = sanity;
+	}
+	public int getLuck() {
+		return luck;
+	}
+	public void setLuck(int luck) {
+		this.luck = luck;
 	}
 	
 	private int social;

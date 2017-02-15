@@ -11,6 +11,10 @@ public abstract class Character {
         this.life = life;
         this.attack = attack;
     }
+    
+    public Character() {
+    	
+    }
 
     public void battle(Character enemy) {
         this.takeDamage(enemy.getAttack());
