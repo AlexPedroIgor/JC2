@@ -1,5 +1,7 @@
 package game;
-
+/**
+ * Created by Alex, Pedro & Igor on Jan/2017.
+ */
 public abstract class Attributes {
 	public int getStrength() {
 		return strength;
