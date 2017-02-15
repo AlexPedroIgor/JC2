@@ -16,7 +16,7 @@ public class EnemyAttributes extends Attributes {
 		setAttributes(id);
 	}
 	
-	public void setAttributes(int id) throws IOException {
+	protected void setAttributes(int id) throws IOException {
 		String gamePath = System.getProperty("user.dir");
 		String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "character";
 		String enemyFile = dataPath + System.getProperty("file.separator") + "enemy.csv";

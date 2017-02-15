@@ -42,12 +42,12 @@ public abstract class Attributes {
 		this.perception = perception;
 	}
 	
-	public abstract void setAttributes(int id) throws IOException;
+	protected abstract void setAttributes(int id) throws IOException;
 	
-	private int strength;
-	private int intelligence;
-	private int agility;
-	private int stamina;
-	private int spirit;
-	private int perception;
+	protected int strength;
+	protected int intelligence;
+	protected int agility;
+	protected int stamina;
+	protected int spirit;
+	protected int perception;
 }
