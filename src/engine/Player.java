@@ -1,7 +1,8 @@
 package engine;
-// JAVA LIBRARY
+
 import java.io.IOException;
-// INTERNAL LIBRARY
+
+import game.Bag;
 import game.PlayerAttributes;
 /**
  * Created by filipebraida on 31/05/16.
@@ -16,4 +17,18 @@ public class Player extends Character {
     public Player(int id) throws IOException {
     	attributes = new PlayerAttributes(id);
     }
+    
+    public void setupBag(int maxWeight) {
+    	this.bag = new Bag(maxWeight);
+    }
+    
+    public void newBag(int maxWeight) {
+    	this.getBag().setMaxWeight(maxWeight);
+    }
+    
+    public Bag getBag() {
+    	return this.bag;
+    }
+    
+    private Bag bag;
 }
