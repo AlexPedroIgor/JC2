@@ -1,6 +1,5 @@
 package engine;
-// INTERNAL LIBRARIES
-import game.Attributes;
+// INTERNAL LIBRARY
 import game.PlayerAttributes;
 /**
  * Created by filipebraida on 31/05/16.
@@ -11,6 +10,4 @@ public class Player extends Character {
         super(life, attack);
         attributes = new PlayerAttributes();
     }
-    
-    public Attributes attributes;
 }

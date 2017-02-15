@@ -1,6 +1,5 @@
 package engine;
 // INTERNAL LIBRARY
-import game.Attributes;
 import game.EnemyAttributes;
 /**
  * Created by filipebraida on 31/05/16.
@@ -11,6 +10,4 @@ public class Enemy extends Character {
         super(life, attack);
         attributes = new EnemyAttributes();
     }
-    
-    public Attributes attributes;
 }

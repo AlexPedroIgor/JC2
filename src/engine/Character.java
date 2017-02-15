@@ -1,4 +1,6 @@
 package engine;
+// INTERNAL LIBRARY
+import game.Attributes;
 /**
  * Created by filipebraida on 31/05/16.
  * Edited by Alex, Pedro & Igor on Jan/2017
@@ -29,6 +31,8 @@ public abstract class Character {
     public int getAttack() {
         return this.attack;
     }
+    
+    public Attributes attributes;
 
     private int life;
     private int attack;
