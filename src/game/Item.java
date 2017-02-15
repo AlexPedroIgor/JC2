@@ -12,7 +12,7 @@ public class Item {
 		setup(id);
 	}
 	
-	public void setup(int id) throws IOException {
+	protected void setup(int id) throws IOException {
 		String gamePath = System.getProperty("user.dir");
 		String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "item";
 		String itensFile = dataPath + System.getProperty("file.separator") + "itens.csv";
