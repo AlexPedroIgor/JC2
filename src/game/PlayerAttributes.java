@@ -1,9 +1,11 @@
 package game;
-// JAVA LIBRARY
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import error.exception.PlayerAttributesException;
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.
  */
@@ -12,8 +14,12 @@ public class PlayerAttributes extends Attributes {
 		super();
 	}
 	
-	public PlayerAttributes(int id) throws IOException {
-		setAttributes(id);
+	public PlayerAttributes(int id) throws PlayerAttributesException {
+		try {
+			setAttributes(id);
+		} catch (IOException e) {
+			throw new PlayerAttributesException();
+		}
 	}
 	
 	protected void setAttributes(int id) throws IOException {

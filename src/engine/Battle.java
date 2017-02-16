@@ -1,5 +1,5 @@
 package engine;
-//JAVA LIBRARY
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -35,6 +35,7 @@ public class Battle {
 				choices.add(itemChoice);
 			}
 		}
+		this.selectItens = new BlankEvent("Selecione um item", choices);
 	}
 	
 	public void setAttack() {
@@ -72,7 +73,19 @@ public class Battle {
 	private Event attack;
 	
 	public static void main(String[] args) {
-		Battle batalha = new Battle(new Player(10,10));
+		Player player = new Player(1);
+		Battle batalha = new Battle(player);
+		System.out.println(batalha.startBattle.history());
+		for(Choice choice:batalha.startBattle.nextEvents()) {
+            System.out.println(choice.getDescription());
+        }
 		System.out.println(batalha.selectItens.history());
+		for(Choice choice:batalha.selectItens.nextEvents()) {
+            System.out.println(choice.getDescription());
+        }
+		System.out.println(batalha.attack.history());
+		for(Choice choice:batalha.attack.nextEvents()) {
+            System.out.println(choice.getDescription());
+        }
 	}
 }

@@ -1,7 +1,6 @@
 package engine;
 
-import java.io.IOException;
-
+import error.exception.PlayerAttributesException;
 import game.Bag;
 import game.PlayerAttributes;
 /**
@@ -14,8 +13,14 @@ public class Player extends Character {
         attributes = new PlayerAttributes();
     }
     
-    public Player(int id) throws IOException {
-    	attributes = new PlayerAttributes(id);
+    public Player(int id) {
+    	setupBag(10);
+    	try {
+			attributes = new PlayerAttributes(id);
+		} catch (PlayerAttributesException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void setupBag(int maxWeight) {
