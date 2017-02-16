@@ -42,6 +42,18 @@ public class Bag {
 		}
 	}
 	
+	public boolean isEmpty() {
+		return this.item.isEmpty();
+	}
+	
+	public ArrayList<Item> getItemArray() {
+		return this.item;
+	}
+	
+	public Item getItem(int id) {
+		return this.item.get(id);
+	}
+	
 	public void setMaxWeight(double maxWeight) {
 		this.maxWeight = maxWeight;
 	}

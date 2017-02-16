@@ -1,9 +1,11 @@
 package game;
-// JAVA LIBRARY
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import engine.Event;
 /**
  * Created by Alex, Pedro & Igor on Feb/2017.
  */
@@ -114,6 +116,16 @@ public class Item {
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}
+	
+	public void setItemEvent(Event itemEvent) {
+		this.itemEvent = itemEvent;
+	}
+	
+	public Event getItemEvent() {
+		return this.itemEvent;
+	}
+	
+	protected Event itemEvent;
 
 	protected String name;
 	protected double price;

@@ -49,6 +49,15 @@ public class Enemy extends Character {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public Event getBattleEvent() {
+		return battleEvent;
+	}
+
+	public void setBattleEvent(Event battleEvent) {
+		this.battleEvent = battleEvent;
+	}
 
 	private String name;
+	private Event battleEvent;
 }
