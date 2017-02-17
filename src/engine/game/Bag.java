@@ -1,12 +1,12 @@
-package game;
+package engine.game;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import error.exception.FullBagException;
-
+import engine.error.exception.FullBagException;
 /**
- * Created by Alex, Pedro & Igor on Feb/2017.
+ * 
+ * @author Pedro da Luz
+ *
  */
 public class Bag {
 	public Bag(double maxWeight) {
@@ -79,7 +79,7 @@ public class Bag {
 	private double maxWeight;
 	private double carrying;
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		Bag bag = new Bag(0.5);
 		Item item = new Item(1);
 		try {

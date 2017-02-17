@@ -1,6 +1,10 @@
-package engine;
+package engine.event;
+
+import engine.charr.Character;
+
 /**
  * Created by filipebraida on 31/05/16.
+ * Edited by Pedro da Luz on Feb/2016.
  */
 public abstract class Choice {
     public Choice(String description, Event event) {

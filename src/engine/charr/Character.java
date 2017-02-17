@@ -1,6 +1,5 @@
-package engine;
-// INTERNAL LIBRARY
-import game.Attributes;
+package engine.charr;
+
 /**
  * Created by filipebraida on 31/05/16.
  * Edited by Alex, Pedro & Igor on Jan/2017

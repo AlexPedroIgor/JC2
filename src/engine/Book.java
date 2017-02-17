@@ -2,8 +2,14 @@ package engine;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import engine.charr.Player;
+import engine.event.BlankEvent;
+import engine.event.Choice;
+import engine.event.Event;
+
 /**
  * Created by filipebraida on 31/05/16.
+ * Edited by Pedro da Luz on Feb/2016.
  */
 public class Book {
 

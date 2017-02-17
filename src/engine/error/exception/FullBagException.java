@@ -1,15 +1,20 @@
-package error.exception;
+package engine.error.exception;
 
 import javax.swing.JOptionPane;
-
+/**
+ * 
+ * @author Pedro da Luz
+ *
+ */
 public class FullBagException extends Exception {
 	public FullBagException() {
 		super();
 	}
 	
 	public void printStackTrace() {
-		System.out.println("Mochila cheia!");
-		JOptionPane.showMessageDialog(null, "Mochila cheia!","",JOptionPane.INFORMATION_MESSAGE);
+		String errorMessage = "Mochila cheia!";
+		System.out.println(errorMessage);
+		JOptionPane.showMessageDialog(null, errorMessage,"",JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**

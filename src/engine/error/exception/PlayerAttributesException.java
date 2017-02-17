@@ -1,15 +1,20 @@
-package error.exception;
+package engine.error.exception;
 
 import javax.swing.JOptionPane;
-
+/**
+ * 
+ * @author Pedro da Luz
+ *
+ */
 public class PlayerAttributesException extends Exception {
 	public PlayerAttributesException() {
 		super();
 	}
 	
 	public void printStackTrack() {
-		System.out.println("Falha na leitura de atributos do jogador");
-		JOptionPane.showMessageDialog(null, "Falha na leitura de atributos do jogador!","Erro",JOptionPane.ERROR_MESSAGE);
+		String errorMessage = "Falha na leitura de atributos do jogador";
+		System.out.println(errorMessage);
+		JOptionPane.showMessageDialog(null, errorMessage,"Erro",JOptionPane.ERROR_MESSAGE);
 	}
 
 	/**

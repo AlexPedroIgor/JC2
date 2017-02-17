@@ -1,8 +1,10 @@
-package game;
-// JAVA LIBRARY
+package engine.charr;
+
 import java.io.IOException;
 /**
- * Created by Alex, Pedro & Igor on Jan/2017.
+ * 
+ * @author Pedro da Luz
+ *
  */
 public abstract class Attributes {
 	public int getStrength() {

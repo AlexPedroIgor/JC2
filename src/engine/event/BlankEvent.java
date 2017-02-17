@@ -1,5 +1,7 @@
-package engine;
+package engine.event;
 import java.util.Collection;
+
+import engine.charr.Character;
 
 /**
  * Created by filipebraida on 31/05/16.

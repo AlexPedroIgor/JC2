@@ -1,8 +1,7 @@
-package engine;
+package engine.charr;
 
-import error.exception.PlayerAttributesException;
-import game.Bag;
-import game.PlayerAttributes;
+import engine.error.exception.PlayerAttributesException;
+import engine.game.Bag;
 /**
  * Created by filipebraida on 31/05/16.
  * Edited by Alex, Pedro & Igor on Jan/2017
