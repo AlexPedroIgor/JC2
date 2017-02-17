@@ -1,4 +1,4 @@
-package engine.game.copy;
+package engine.game;
 // JAVA LIBRARY
 import java.io.IOException;
 /**
