@@ -14,6 +14,7 @@ public class Player extends Character {
     }
     
     public Player(int id) {
+    	super(10,10);
     	setupBag(10);
     	try {
 			attributes = new PlayerAttributes(id);
