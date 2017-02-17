@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import engine.charr.Player;
+import engine.error.exception.StoryReadFileException;
 import engine.event.Choice;
 import engine.event.Event;
 import engine.game.Story;
@@ -12,7 +13,7 @@ import engine.game.Story;
  * Edited by Alex, Pedro & Igor on Jan/2017
  */
 public class Engine {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
     	Story story = new Story();
 		
 		System.out.println(System.getProperty("os.name"));
@@ -39,6 +40,11 @@ public class Engine {
 		story.reset();
 		
 		in.close();
-		story.close();
+		try {
+			story.close();
+		} catch (StoryReadFileException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }
