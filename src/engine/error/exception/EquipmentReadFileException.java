@@ -1,7 +1,11 @@
 package engine.error.exception;
 
 import javax.swing.JOptionPane;
-
+/**
+ * 
+ * @author Pedro da Luz
+ *
+ */
 public class EquipmentReadFileException extends Exception {
 	public EquipmentReadFileException() {
 		super();

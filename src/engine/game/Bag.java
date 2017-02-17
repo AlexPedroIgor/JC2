@@ -3,9 +3,10 @@ package engine.game;
 import java.util.ArrayList;
 
 import engine.error.exception.FullBagException;
-
 /**
- * Created by Alex, Pedro & Igor on Feb/2017.
+ * 
+ * @author Pedro da Luz
+ *
  */
 public class Bag {
 	public Bag(double maxWeight) {

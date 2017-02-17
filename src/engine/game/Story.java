@@ -12,7 +12,9 @@ import engine.event.BlankEvent;
 import engine.event.Choice;
 import engine.event.Event;
 /**
- * Created by Alex, Pedro & Igor on Jan/2017.
+ * 
+ * @author Pedro da Luz
+ *
  */
 public class Story {	
 	public Story() throws IOException {

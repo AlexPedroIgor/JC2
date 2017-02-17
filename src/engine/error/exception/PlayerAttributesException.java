@@ -1,7 +1,11 @@
 package engine.error.exception;
 
 import javax.swing.JOptionPane;
-
+/**
+ * 
+ * @author Pedro da Luz
+ *
+ */
 public class PlayerAttributesException extends Exception {
 	public PlayerAttributesException() {
 		super();

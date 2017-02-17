@@ -7,7 +7,9 @@ import java.io.InputStreamReader;
 
 import engine.error.exception.PlayerAttributesException;
 /**
- * Created by Alex, Pedro & Igor on Jan/2017.
+ * 
+ * @author Pedro da Luz
+ *
  */
 public class PlayerAttributes extends Attributes {
 	public PlayerAttributes() {

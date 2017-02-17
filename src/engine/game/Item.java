@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import engine.error.exception.ItemReadFileException;
-import engine.event.Event;
 /**
- * Created by Alex, Pedro & Igor on Feb/2017.
+ * 
+ * @author Pedro da Luz
+ *
  */
 public class Item {
 	public Item(int id) {
@@ -133,16 +134,16 @@ public class Item {
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}
-	
-	public void setItemEvent(Event itemEvent) {
-		this.itemEvent = itemEvent;
+		
+	public Effect getItemEffect() {
+		return itemEffect;
 	}
-	
-	public Event getItemEvent() {
-		return this.itemEvent;
+
+	public void setItemEffect(Effect itemEffect) {
+		this.itemEffect = itemEffect;
 	}
-	
-	protected Event itemEvent;
+
+	protected Effect itemEffect;
 
 	protected String name;
 	protected double price;

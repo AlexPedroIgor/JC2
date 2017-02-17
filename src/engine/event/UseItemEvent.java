@@ -1,20 +1,25 @@
 package engine.event;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 import engine.charr.Character;
-
+import engine.game.Effect;
+/**
+ * 
+ * @author Pedro da Luz
+ *
+ */
 public class UseItemEvent extends Event {
 
-	public UseItemEvent(String description, Collection<Choice> choices) {
-		super(description, choices);
-		// TODO Auto-generated constructor stub
+	public UseItemEvent(String description, Effect itemEffect) {
+		super(description, new ArrayList<Choice>());
+		this.effect = itemEffect;
 	}
 
 	@Override
 	public void applyHistory(Character character) {
-		// TODO Auto-generated method stub
-		
+		effect.applyEffect(character);
 	}
-
+	
+	private Effect effect;
 }

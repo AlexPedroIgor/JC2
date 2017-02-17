@@ -1,13 +1,17 @@
 package engine.event;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 import engine.charr.Character;
-
+/**
+ * 
+ * @author Pedro da Luz
+ *
+ */
 public class BattleEvent extends Event {
 
-	public BattleEvent(String description, Collection<Choice> choices) {
-		super(description, choices);
+	public BattleEvent(String description) {
+		super(description, new ArrayList<Choice>());
 		// TODO Auto-generated constructor stub
 	}
 

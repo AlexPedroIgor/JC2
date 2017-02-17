@@ -1,4 +1,5 @@
 package engine.event;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -6,6 +7,7 @@ import engine.charr.Character;
 
 /**
  * Created by filipebraida on 31/05/16.
+ * Edited by Pedro da Luz on Feb/2016.
  */
 public abstract class Event {
     public Event(String description, Collection<Choice> choices) {
