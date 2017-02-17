@@ -1,4 +1,4 @@
-package error.exception;
+package engine.error.exception;
 
 import javax.swing.JOptionPane;
 

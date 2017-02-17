@@ -1,4 +1,4 @@
-package game;
+package engine.game.copy;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package game;
+package engine.charr;
 // JAVA LIBRARY
 import java.io.IOException;
 /**

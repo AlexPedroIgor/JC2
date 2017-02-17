@@ -3,10 +3,10 @@ package engine;
 import java.io.IOException;
 import java.util.Scanner;
 
+import engine.charr.Player;
 import engine.event.Choice;
 import engine.event.Event;
-// INTERNAL LIBRARY
-import game.Story;
+import engine.game.Story;
 /**
  * Created by filipebraida on 31/05/16.
  * Edited by Alex, Pedro & Igor on Jan/2017

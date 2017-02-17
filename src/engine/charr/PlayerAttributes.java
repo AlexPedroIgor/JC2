@@ -1,11 +1,11 @@
-package game;
+package engine.charr;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import error.exception.PlayerAttributesException;
+import engine.error.exception.PlayerAttributesException;
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.
  */

@@ -1,6 +1,6 @@
 package engine.event;
 
-import engine.Character;
+import engine.charr.Character;
 
 /**
  * Created by filipebraida on 31/05/16.

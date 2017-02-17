@@ -2,7 +2,7 @@ package engine.event;
 
 import java.util.Collection;
 
-import engine.Character;
+import engine.charr.Character;
 
 public class BattleEvent extends Event {
 

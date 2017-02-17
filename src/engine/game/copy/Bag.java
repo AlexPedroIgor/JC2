@@ -1,9 +1,9 @@
-package game;
+package engine.game.copy;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import error.exception.FullBagException;
+import engine.error.exception.FullBagException;
 
 /**
  * Created by Alex, Pedro & Igor on Feb/2017.

@@ -2,6 +2,7 @@ package engine;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import engine.charr.Player;
 import engine.event.BlankEvent;
 import engine.event.Choice;
 import engine.event.Event;

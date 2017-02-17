@@ -1,4 +1,4 @@
-package engine;
+package engine.charr;
 //JAVA LIBRARY
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import engine.event.Event;
-// INTERNAL LIBRARY
-import game.EnemyAttributes;
 /**
  * Created by filipebraida on 31/05/16.
  * Edited by Alex, Pedro & Igor on Jan/2017
