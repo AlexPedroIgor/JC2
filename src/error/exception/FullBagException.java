@@ -1,5 +1,7 @@
 package error.exception;
 
+import javax.swing.JOptionPane;
+
 public class FullBagException extends Exception {
 	public FullBagException() {
 		super();
@@ -7,6 +9,7 @@ public class FullBagException extends Exception {
 	
 	public void printStackTrace() {
 		System.out.println("Mochila cheia!");
+		JOptionPane.showMessageDialog(null, "Mochila cheia!","",JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**

@@ -85,7 +85,7 @@ public class Bag {
 		try {
 			bag.addItem(item);
 		} catch (FullBagException e) {
-			System.out.println("Mochila cheia");
+			e.printStackTrace();
 		}
 	}
 }
