@@ -18,8 +18,7 @@ public class BattleEvent extends Event {
 
 	@Override
 	public void applyHistory(Character character) {
-		// TODO Auto-generated method stub
-		
+		character.battle(this.enemy);
 	}
 	
 	private Enemy enemy;
