@@ -12,8 +12,9 @@ public class EquipmentReadFileException extends Exception {
 	}
 	
 	public void printStackTrack() {
-		System.out.println("Falha na leitura dos equipamentos!");
-		JOptionPane.showMessageDialog(null, "Falha na leitura dos equipamentos!","Erro",JOptionPane.ERROR_MESSAGE);
+		String errorMessage = "Falha na leitura dos equipamentos!";
+		System.out.println(errorMessage);
+		JOptionPane.showMessageDialog(null, errorMessage,"Erro",JOptionPane.ERROR_MESSAGE);
 	}
 
 	/**

@@ -12,8 +12,9 @@ public class FullBagException extends Exception {
 	}
 	
 	public void printStackTrace() {
-		System.out.println("Mochila cheia!");
-		JOptionPane.showMessageDialog(null, "Mochila cheia!","",JOptionPane.INFORMATION_MESSAGE);
+		String errorMessage = "Mochila cheia!";
+		System.out.println(errorMessage);
+		JOptionPane.showMessageDialog(null, errorMessage,"",JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**

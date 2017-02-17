@@ -1,18 +1,14 @@
 package engine.error.exception;
 
 import javax.swing.JOptionPane;
-/**
- * 
- * @author Pedro da Luz
- *
- */
-public class ItemReadFileException extends Exception {
-	public ItemReadFileException() {
+
+public class StoryResponsesReadFileException extends StoryReadFileException {
+	public StoryResponsesReadFileException() {
 		super();
 	}
 	
 	public void printStackTrack() {
-		String errorMessage = "Falha na leitura dos itens!";
+		String errorMessage = "Falha na leitura das respostas!";
 		System.out.println(errorMessage);
 		JOptionPane.showMessageDialog(null, errorMessage,"Erro",JOptionPane.ERROR_MESSAGE);
 	}
@@ -20,6 +16,6 @@ public class ItemReadFileException extends Exception {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6840523347629328113L;
+	private static final long serialVersionUID = -6099501063089292270L;
 
 }
