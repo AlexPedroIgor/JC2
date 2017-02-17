@@ -3,6 +3,7 @@ package engine.event;
 import java.util.ArrayList;
 
 import engine.charr.Character;
+import engine.charr.Enemy;
 /**
  * 
  * @author Pedro da Luz
@@ -10,9 +11,9 @@ import engine.charr.Character;
  */
 public class BattleEvent extends Event {
 
-	public BattleEvent(String description) {
+	public BattleEvent(String description, Enemy enemy) {
 		super(description, new ArrayList<Choice>());
-		// TODO Auto-generated constructor stub
+		this.enemy = enemy;
 	}
 
 	@Override
@@ -20,5 +21,6 @@ public class BattleEvent extends Event {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	private Enemy enemy;
 }
