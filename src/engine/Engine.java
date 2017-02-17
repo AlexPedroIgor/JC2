@@ -2,6 +2,9 @@ package engine;
 // JAVA LIBRARY
 import java.io.IOException;
 import java.util.Scanner;
+
+import engine.event.Choice;
+import engine.event.Event;
 // INTERNAL LIBRARY
 import game.Story;
 /**

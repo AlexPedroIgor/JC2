@@ -1,4 +1,7 @@
-package engine;
+package engine.event;
+
+import engine.Character;
+
 /**
  * Created by filipebraida on 31/05/16.
  */

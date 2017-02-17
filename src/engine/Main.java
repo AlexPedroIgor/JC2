@@ -2,6 +2,11 @@ package engine;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import engine.event.BlankChoice;
+import engine.event.BlankEvent;
+import engine.event.Choice;
+import engine.event.Event;
+
 public class Main {
 	public static void main(String[] args){
 		Event eventoFinal = new BlankEvent("Você morreu porque o Duarte" +

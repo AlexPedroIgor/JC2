@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import engine.event.Event;
 // INTERNAL LIBRARY
 import game.EnemyAttributes;
 /**

@@ -1,13 +1,16 @@
 package game;
-// JAVA LIBRARY
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-// INTERNAL LIBRARY
-import engine.*;
+
+import engine.event.BlankChoice;
+import engine.event.BlankEvent;
+import engine.event.Choice;
+import engine.event.Event;
 /**
  * Created by Alex, Pedro & Igor on Jan/2017.
  */

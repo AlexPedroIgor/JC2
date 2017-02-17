@@ -1,4 +1,6 @@
-package engine;
+package engine.event;
+
+import engine.Character;
 
 public class UseItemChoice extends Choice {
 

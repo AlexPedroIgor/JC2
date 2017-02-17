@@ -1,4 +1,8 @@
-package engine;
+package engine.event;
+
+import engine.Character;
+import engine.Enemy;
+
 /**
  * Created by filipebraida on 31/05/16.
  */

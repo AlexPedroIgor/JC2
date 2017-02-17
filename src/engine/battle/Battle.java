@@ -1,9 +1,19 @@
-package engine;
+package engine.battle;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
+import engine.Book;
+import engine.Enemy;
+import engine.Player;
+import engine.event.BattleChoice;
+import engine.event.BattleEvent;
+import engine.event.BlankChoice;
+import engine.event.BlankEvent;
+import engine.event.Choice;
+import engine.event.Event;
+import engine.event.UseItemChoice;
 import game.Item;
 /**
  * Created by Alex, Pedro & Igor on Feb/2017.

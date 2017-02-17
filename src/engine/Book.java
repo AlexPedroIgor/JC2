@@ -2,6 +2,10 @@ package engine;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import engine.event.BlankEvent;
+import engine.event.Choice;
+import engine.event.Event;
+
 /**
  * Created by filipebraida on 31/05/16.
  */

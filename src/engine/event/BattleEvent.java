@@ -1,6 +1,8 @@
-package engine;
+package engine.event;
 
 import java.util.Collection;
+
+import engine.Character;
 
 public class BattleEvent extends Event {
 

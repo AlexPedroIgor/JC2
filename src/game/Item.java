@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import engine.Event;
+import engine.event.Event;
 /**
  * Created by Alex, Pedro & Igor on Feb/2017.
  */
