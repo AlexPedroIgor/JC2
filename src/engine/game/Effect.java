@@ -6,13 +6,10 @@ import engine.charr.Character;
  * @author Pedro da Luz
  *
  */
-public class Effect {
+public abstract class Effect {
 	public Effect() {
 		
 	}
 	
-	public void applyEffect(Character character) {
-		
-	}
-
+	public abstract void applyEffect(Character character);
 }
