@@ -26,7 +26,7 @@ public class Equipment extends Item {
 		}
 	}
 	
-	protected void setupEquipment(int id) throws EquipmentReadFileException {
+	private void setupEquipment(int id) throws EquipmentReadFileException {
 		try {
 			String gamePath = System.getProperty("user.dir");
 			String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "item";
@@ -76,7 +76,7 @@ public class Equipment extends Item {
 		}
 	}
 	
-	protected void setup(int id) throws ItemReadFileException {
+	private void setup(int id) throws ItemReadFileException {
 		try {
 			String gamePath = System.getProperty("user.dir");
 			String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "item";
@@ -192,15 +192,15 @@ public class Equipment extends Item {
 		this.equipment_id = equipment_id;
 	}
 
-	private int strength;
-	private int intelligence;
-	private int agility;
-	private int stamina;
-	private int spirit;
-	private int social;
-	private int perception;
-	private int sanity;
-	private int luck;
+	protected int strength;
+	protected int intelligence;
+	protected int agility;
+	protected int stamina;
+	protected int spirit;
+	protected int social;
+	protected int perception;
+	protected int sanity;
+	protected int luck;
 	
-	private int equipment_id;
+	protected int equipment_id;
 }
