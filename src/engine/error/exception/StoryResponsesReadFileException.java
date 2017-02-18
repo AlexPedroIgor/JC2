@@ -7,7 +7,7 @@ public class StoryResponsesReadFileException extends StoryReadFileException {
 		super();
 	}
 	
-	public void printStackTrack() {
+	public void printStackTrace() {
 		String errorMessage = "Falha na leitura das respostas!";
 		System.out.println(errorMessage);
 		JOptionPane.showMessageDialog(null, errorMessage,"Erro",JOptionPane.ERROR_MESSAGE);

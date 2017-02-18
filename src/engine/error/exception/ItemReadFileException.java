@@ -11,7 +11,7 @@ public class ItemReadFileException extends Exception {
 		super();
 	}
 	
-	public void printStackTrack() {
+	public void printStackTrace() {
 		String errorMessage = "Falha na leitura dos itens!";
 		System.out.println(errorMessage);
 		JOptionPane.showMessageDialog(null, errorMessage,"Erro",JOptionPane.ERROR_MESSAGE);
