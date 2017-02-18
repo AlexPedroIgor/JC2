@@ -1,6 +1,5 @@
 package engine;
-// JAVA LIBRARY
-import java.io.IOException;
+
 import java.util.Scanner;
 
 import engine.charr.Player;
