@@ -27,7 +27,8 @@ public class Story {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		setStoryTrack(1);
+		finish = false;
+		setStoryTrack(0);
 		onChoices = false;
 		onBattle = false;
 		storyLine = "0";
@@ -124,6 +125,8 @@ public class Story {
 			this.storyLine = this.readStoryFile.readLine();
 			String currentStoryLine = this.storyLine;
 			this.storyLine = this.readStoryFile.readLine();
+			if(this.storyLine.equals("[end]"))
+				this.finish = true;
 			if(this.storyLine.contains("[choice]")) {
 				try {
 					this.updateResponses();
@@ -141,6 +144,7 @@ public class Story {
 				this.onChoices = false;
 				this.onBattle = false;
 			}
+			currentStoryLine = interpretCode(currentStoryLine);
 			return currentStoryLine;
 		} catch(IOException e) {
 			throw new StoryReadFileException();
@@ -158,6 +162,7 @@ public class Story {
 					Event responseEvent = new BlankEvent(responseLine, new ArrayList<Choice>());
 					this.responses.add(responseEvent);
 				}
+				responseLine = interpretCode(responseLine);
 				responseLine = this.readResponsesFile.readLine();
 			}
 		} catch(IOException e) {
@@ -176,11 +181,21 @@ public class Story {
 					Choice choiceEvent = new BlankChoice(choiceLine, this.responses.get(this.choices.size()));
 					this.choices.add(choiceEvent);
 				}
+				choiceLine = interpretCode(choiceLine);
 				choiceLine = this.readChoicesFile.readLine();
 			}
 		} catch(IOException e) {
 			throw new StoryChoicesReadFileException();
 		}
+	}
+	
+	public static String interpretCode(String line) {
+		line = line.replaceAll(" \\[p\\] ", "\n");
+		return line;
+	}
+	
+	public boolean finishReadingStory() {
+		return this.finish;
 	}
 			
 	private BufferedReader readStoryFile;
@@ -194,4 +209,5 @@ public class Story {
 	private int storyTrack;
 	private boolean onChoices;
 	private boolean onBattle;
+	private boolean finish;
 }
