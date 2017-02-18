@@ -13,20 +13,20 @@ import engine.error.exception.ItemReadFileException;
 public class Equipment extends Item {
 	public Equipment(int id) throws IOException {
 		try {
-			setupEq(id);
+			setup(id);
 		} catch (ItemReadFileException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			setup(id);
+			setupEquipment(id);
 		} catch (EquipmentReadFileException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	protected void setup(int id) throws EquipmentReadFileException {
+	protected void setupEquipment(int id) throws EquipmentReadFileException {
 		try {
 			String gamePath = System.getProperty("user.dir");
 			String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "item";
@@ -74,7 +74,43 @@ public class Equipment extends Item {
 		} catch(IOException e) {
 			throw new EquipmentReadFileException();
 		}
-	}	
+	}
+	
+	protected void setup(int id) throws ItemReadFileException {
+		try {
+			String gamePath = System.getProperty("user.dir");
+			String dataPath = gamePath + System.getProperty("file.separator") + "data" + System.getProperty("file.separator") + "item";
+			String itensFile = dataPath + System.getProperty("file.separator") + "itens.csv";
+			
+			BufferedReader readItensFile = new BufferedReader(
+					new InputStreamReader(new FileInputStream(itensFile), "UTF-8"));
+			
+			String line = readItensFile.readLine(); // First line doesn't count
+			int currentID;
+			String name;
+			double price;
+			double weight;
+			int item_id;
+			
+			do {
+				line = readItensFile.readLine();
+				currentID = new Integer(line.split(";")[4]);
+				name = new String(line.split(";")[1]);
+				price = new Double(line.split(";")[2]);
+				weight = new Double(line.split(";")[3]);
+				item_id = new Integer(line.split(";")[0]);
+			} while(currentID != id);
+			readItensFile.close();
+			
+			setName(name);
+			setPrice(price);
+			setWeight(weight);
+			setEquipment_id(id);
+			setItem_id(item_id);
+		} catch(IOException e) {
+			throw new ItemReadFileException();
+		}
+	}
 	
 	public int getStrength() {
 		return strength;
@@ -147,6 +183,14 @@ public class Equipment extends Item {
 	public void setLuck(int luck) {
 		this.luck = luck;
 	}
+	
+	public int getEquipment_id() {
+		return equipment_id;
+	}
+
+	public void setEquipment_id(int equipment_id) {
+		this.equipment_id = equipment_id;
+	}
 
 	private int strength;
 	private int intelligence;
@@ -157,4 +201,6 @@ public class Equipment extends Item {
 	private int perception;
 	private int sanity;
 	private int luck;
+	
+	private int equipment_id;
 }

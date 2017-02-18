@@ -81,7 +81,7 @@ public class Bag {
 	
 	public static void main(String[] args) {
 		Bag bag = new Bag(0.5);
-		Item item = new Item(1);
+		Item item = new GenericItem(1);
 		try {
 			bag.addItem(item);
 		} catch (FullBagException e) {
